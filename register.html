@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Register - Electro</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register" class="auth-page">
+	<header>
+		<div id="header">
+			<div class="container">
+				<div class="header-logo"><a href="index.html" class="logo"><img src="./img/joshua.jpg" alt="Joshua store"></a></div>
+			</div>
+		</div>
+	</header>
+	<div id="breadcrumb" class="section">
+		<div class="container"><div class="row"><div class="col-md-12">
+			<h3 class="breadcrumb-header">Register</h3>
+			<ul class="breadcrumb-tree"><li><a href="index.html">Home</a></li><li class="active">Register</li></ul>
+		</div></div></div>
+	</div>
+	<div class="section"><div class="container"><div class="row"><div class="col-md-6 col-md-offset-3">
+		<div class="auth-form">
+			<div class="auth-heading"><span class="auth-kicker">Join Joshua</span><h3 class="title">Create your account</h3><p>Set up your account and start building your cart.</p></div>
+			<form id="register-form" novalidate>
+				<div class="form-group"><input class="input" type="text" id="register-name" placeholder="Full Name" required></div>
+				<div class="form-group"><input class="input" type="email" id="register-email" placeholder="Gmail address" required></div>
+				<div class="form-group"><input class="input" type="tel" id="register-phone" placeholder="Phone Number" required></div>
+				<div class="form-group"><input class="input" type="password" id="register-password" placeholder="Password (at least 6 characters)" minlength="6" required></div>
+				<div class="form-group"><input class="input" type="password" id="register-confirm-password" placeholder="Confirm Password" minlength="6" required></div>
+				<div id="register-error" class="checkout-error" style="display:none;"></div>
+				<button class="primary-btn auth-submit" type="submit"><i class="fa fa-user-plus"></i> Register</button>
+			</form>
+			<p>Already have an account? <a href="login.html">Login</a></p>
+		</div>
+	</div></div></div></div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/products.js"></script>
+	<script type="module" src="js/firbase.js"></script>
+	<script src="js/auth.js?v=1"></script>
+	<script src="js/app.js?v=8"></script>
+</body>
+</html>
