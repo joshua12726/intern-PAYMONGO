@@ -89,9 +89,6 @@ function Send-Json {
   $bytes = [Text.Encoding]::UTF8.GetBytes($json)
   $Context.Response.StatusCode = $Status
   $Context.Response.ContentType = "application/json; charset=utf-8"
-  $Context.Response.Headers.Add("Access-Control-Allow-Origin", "*")
-  $Context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-  $Context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type")
   $Context.Response.Headers.Add("Cache-Control", "no-store")
   $Context.Response.ContentLength64 = $bytes.Length
   $Context.Response.OutputStream.Write($bytes, 0, $bytes.Length)
@@ -227,11 +224,6 @@ while ($listener.IsListening) {
   try {
     $path = [Uri]::UnescapeDataString($ctx.Request.Url.LocalPath)
     $method = $ctx.Request.HttpMethod
-
-    if ($method -eq "OPTIONS") {
-      Send-Json $ctx 204 @{}
-      continue
-    }
 
     if ($path -eq "/api/health") {
       Send-Json $ctx 200 @{ ok = $true }
